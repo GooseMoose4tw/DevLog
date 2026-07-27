@@ -1,5 +1,6 @@
 package com.joshuakligman;
 
+import com.joshuakligman.dao.DatabaseManager;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -15,6 +16,9 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
+
+        DatabaseManager.createTable();
+
         Label label = new Label("DevLog is running");
 
         Button button = new Button("Click Me");
