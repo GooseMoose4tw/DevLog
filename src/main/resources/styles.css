@@ -1,0 +1,65 @@
+.root {
+    -fx-font-family: "Segoe UI", sans-serif;
+    -fx-font-size: 13px;
+    -fx-background-color: #f5f6f8;
+}
+
+.section-title {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2c3e50;
+}
+
+.form-pane, .table-pane {
+    -fx-background-color: white;
+    -fx-background-radius: 6;
+    -fx-border-color: #dcdfe4;
+    -fx-border-radius: 6;
+}
+
+.button {
+    -fx-background-color: #3d6b9e;
+    -fx-text-fill: white;
+    -fx-background-radius: 4;
+    -fx-padding: 6 16 6 16;
+    -fx-cursor: hand;
+}
+
+.button:hover {
+    -fx-background-color: #2f5580;
+}
+
+.delete-button {
+    -fx-background-color: #b04141;
+}
+
+.delete-button:hover {
+    -fx-background-color: #8f3333;
+}
+
+.summary-bar {
+    -fx-background-color: #2c3e50;
+}
+
+.summary-bar .label {
+    -fx-text-fill: white;
+    -fx-font-size: 13px;
+}
+
+.timer-box {
+    -fx-padding: 8;
+    -fx-background-color: #eef2f7;
+    -fx-background-radius: 4;
+}
+
+.table-view {
+    -fx-border-color: #dcdfe4;
+}
+
+.table-view .column-header {
+    -fx-background-color: #e8ebef;
+}
+
+.table-view .column-header .label {
+    -fx-font-weight: bold;
+}

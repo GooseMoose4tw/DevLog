@@ -1,12 +1,14 @@
 package com.joshuakligman;
 
 import com.joshuakligman.dao.DatabaseManager;
+
+import com.joshuakligman.ui.MainView;
 import javafx.application.Application;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.layout.VBox;
+
 import javafx.stage.Stage;
+
+import java.util.Objects;
 
 
 public class Main extends Application {
@@ -15,24 +17,17 @@ public class Main extends Application {
     }
 
     @Override
-    public void start(Stage primaryStage) throws Exception {
-
+    public void start(Stage primaryStage) {
         DatabaseManager.createTable();
 
-        Label label = new Label("DevLog is running");
+        MainView mainView = new MainView();
+        Scene scene = new Scene(mainView.getRoot(), 1100, 700);
 
-        Button button = new Button("Click Me");
-        button.setOnAction(e -> System.out.println("Button Clicked"));
+        scene.getStylesheets().add(
+                Objects.requireNonNull(getClass().getResource("/styles.css")).toExternalForm());
 
-
-        VBox root = new VBox(10, label, button);
-
-        Scene scene = new Scene(root, 400, 300);
-
-
-        primaryStage.setTitle("DevLog");
+        primaryStage.setTitle("DevLog - Coding Session Tracker");
         primaryStage.setScene(scene);
         primaryStage.show();
-
     }
 }
