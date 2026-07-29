@@ -4,8 +4,10 @@ import com.joshuakligman.dao.DatabaseManager;
 
 import com.joshuakligman.ui.MainView;
 import javafx.application.Application;
+import javafx.geometry.Rectangle2D;
 import javafx.scene.Scene;
 
+import javafx.stage.Screen;
 import javafx.stage.Stage;
 
 import java.util.Objects;
@@ -21,7 +23,11 @@ public class Main extends Application {
         DatabaseManager.createTable();
 
         MainView mainView = new MainView();
-        Scene scene = new Scene(mainView.getRoot(), 1100, 700);
+        Rectangle2D bounds = Screen.getPrimary().getVisualBounds();
+        double width = Math.min(1400, bounds.getWidth() * 0.9);
+        double height = Math.min(900, bounds.getHeight() * 0.9);
+
+        Scene scene = new Scene(mainView.getRoot(), width, height);
 
         scene.getStylesheets().add(
                 Objects.requireNonNull(getClass().getResource("/styles.css")).toExternalForm());
